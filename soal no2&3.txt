@@ -1,0 +1,34 @@
+SOAL NO 2 buat queri
+
+INSERT INTO `BARANG` SET `kategori`.*, `sub_kategori`.*, `product`.*
+FROM `kategori`
+	, `sub_kategori`
+	, `product`;
+
+INSERT INTO `kategori` SET `id`=[value-1],`category name`=[value-2] WHERE 1
+
+INSERT INTO `sub_kategori` (`id`, `category_id`, `sub_category_name`) VALUES ('1', '1', 'Sprial Mixer'), ('2', '1', '1 Dough Mixer'), ('3', '1', 'Proffer'), ('4', '1', 'Oven');
+
+INSERT INTO `product` (`id`, `sub_category_id`, `product_name`, `price`) VALUES ('1', '1', 'SMX-DN10 ', '12000000'), ('2', '1', 'SMX-DN20 ', '15000000');
+
+
+SOAL NO 3
+function tambah($start1, $start2, $jumlah_angka) {
+    // Inisialisasi array untuk menyimpan hasil
+    $hasil = array($start1, $start2);
+
+    // Hitung angka selanjutnya dengan menambahkan dua angka terakhir
+    for ($i = 2; $i < $jumlah_angka; $i++) {
+        $hasil[$i] = $hasil[$i-1] + $hasil[$i-2];
+    }
+
+    // Kembalikan array hasil
+    return $hasil;
+}
+
+// Contoh penggunaan:
+$hasil1 = tambah(5, 7, 4);
+print_r($hasil1); // Output: Array ( [0] => 5 [1] => 7 [2] => 12 [3] => 19 )
+
+$hasil2 = tambah(1, 1, 5);
+print_r($hasil2); // Output: Array ( [0] => 1 [1] => 1 [2] => 2 [3] => 3 [4] => 5 )
